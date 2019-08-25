@@ -46,7 +46,7 @@ module Lita
           charset = f.charset
           f.read
         end
-        Nokogiri::HTML.parse(html, nil, charset)
+        ::Nokogiri::HTML.parse(html, nil, charset)
       end
 
       private def send_attachement(target:, url:, title:, body:, image_url:)

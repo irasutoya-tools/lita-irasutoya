@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 module Lita
   module Handlers
     class Irastoya < Handler

@@ -5,7 +5,7 @@ require 'irasutoya'
 
 module Lita
   module Handlers
-    class Irastoya < Handler
+    class Irasutoya < Handler
       route(
         /^irasutoya$/i,
         :irasutoya,
@@ -19,8 +19,12 @@ module Lita
 
       private
 
+      def adapter
+        robot.config.robot.adapter
+      end
+
       def reply(bot, irasuto)
-        case robot.config.robot.adapter
+        case adapter
         when :slack then reply_to_slack(bot, irasuto)
         else reply_to_others bot, irasuto
         end
@@ -37,10 +41,7 @@ module Lita
       end
 
       def reply_to_others(bot, irasuto)
-        bot.reply irasuto.url
-        bot.reply irasuto.title
-        bot.reply irasuto.description
-        bot.reply irasuto.image_url
+        bot.reply [irasuto.url, irasuto.title, irasuto.description, irasuto.image_url].join("\n")
       end
 
       def send_attachement(target:, url:, title:, body:, image_url:)
@@ -56,6 +57,6 @@ module Lita
       end
     end
 
-    Lita.register_handler(Lita::Handlers::Irastoya)
+    Lita.register_handler(Lita::Handlers::Irasutoya)
   end
 end

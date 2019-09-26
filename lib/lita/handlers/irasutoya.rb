@@ -11,8 +11,7 @@ module Lita
       )
 
       def irasutoya(bot)
-        irasuto = ::Irasutoya.random
-        p irasuto
+        irasuto = ::Irasutoya::Irasuto.random
         case robot.config.robot.adapter
         when :slack
           send_attachement(

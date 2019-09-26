@@ -18,7 +18,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    irasutoya (0.1.0)
+    irasutoya (1.0.0)
       nokogiri
     lita (4.7.1)
       bundler (>= 1.3)

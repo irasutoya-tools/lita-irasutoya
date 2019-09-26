@@ -1,6 +1,8 @@
 # lita-irasutoya
 [![Gem Version](https://badge.fury.io/rb/lita-irasutoya.svg)](https://badge.fury.io/rb/lita-irasutoya)
+[![Circle CI](https://circleci.com/gh/unhappychoice/lita-irasutoya.svg?style=shield)](https://circleci.com/gh/unhappychoice/lita-irasutoya)
 [![Code Climate](https://codeclimate.com/github/unhappychoice/lita-irasutoya/badges/gpa.svg)](https://codeclimate.com/github/unhappychoice/lita-irasutoya)
+[![codecov](https://codecov.io/gh/unhappychoice/lita-irasutoya/branch/master/graph/badge.svg)](https://codecov.io/gh/unhappychoice/lita-irasutoya)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/unhappychoice/lita-irasutoya.svg)](https://libraries.io/github/unhappychoice/lita-irasutoya)
 ![](http://ruby-gem-downloads-badge.herokuapp.com/lita-irasutoya?type=total)
 ![GitHub](https://img.shields.io/github/license/unhappychoice/lita-irasutoya.svg)

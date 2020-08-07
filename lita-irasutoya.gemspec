@@ -7,6 +7,7 @@ require 'lita/irasutoya/version'
 Gem::Specification.new do |spec|
   spec.name          = 'lita-irasutoya'
   spec.version       = Lita::Irasutoya::VERSION
+  spec.required_ruby_version = '>= 2.5'
   spec.authors       = ['Yuji Ueki']
   spec.email         = ['unhappychoice@gmail.com']
 

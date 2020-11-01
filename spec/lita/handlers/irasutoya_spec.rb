@@ -8,7 +8,7 @@ RSpec.describe Lita::Handlers::Irasutoya, lita_handler: true do # rubocop:disabl
   end
 
   describe 'Behavior' do # rubocop:disable Metrics/BlockLength
-    let(:reply_message) {}
+    let(:reply_message) { nil }
 
     subject { replies }
 

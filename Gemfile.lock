@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lita-irasutoya (0.1.5)
+    lita-irasutoya (1.0.0)
       irasutoya
       lita (>= 4.7)
 

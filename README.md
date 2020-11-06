@@ -9,6 +9,8 @@
 
 `lita-irasutoya` allows you to get random images from www.irasutoya.com.
 
+![](https://github.com/unhappychoice/lita-irasutoya/raw/master/images/usage.png)
+
 ## Installation
 
 ```ruby
@@ -17,7 +19,15 @@ gem 'lita-irasutoya'
 
 ## Usage
 
-![](https://github.com/unhappychoice/lita-irasutoya/raw/master/images/usage.png)
+### Ramdom images
+```
+irasutoya random
+```
+
+### Search images
+```
+irasutoya search xxxx
+```
 
 ## Contributing
 

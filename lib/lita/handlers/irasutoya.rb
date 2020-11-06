@@ -6,14 +6,21 @@ require 'irasutoya'
 module Lita
   module Handlers
     class Irasutoya < Handler
-      route(
-        /^irasutoya$/i,
-        :irasutoya,
-        help: { 'irasutoya' => 'いらすとやからランダムに画像を表示します。' }
-      )
-
-      def irasutoya(bot)
+      route(/^irasutoya$/i, help: { 'irasutoya' => 'いらすとやからランダムに画像を表示します。' }) do |bot|
         reply(bot, ::Irasutoya::Irasuto.random)
+      end
+
+      route(/^irasutoya random$/i, help: { 'irasutoya' => 'いらすとやからランダムに画像を表示します。' }) do |bot|
+        reply(bot, ::Irasutoya::Irasuto.random)
+      end
+
+      route(/^irasutoya search (.*)$/i, help: { 'irasutoya search' => 'いらすとやから画像を検索します。' }) do |bot|
+        ::Irasutoya::Irasuto
+          .search(query: bot.matches.dig(0, 0))
+          .take(3)
+          .flat_map(&:fetch_irasuto)
+          .compact
+          .each { |irasuto| reply(bot, irasuto) }
       end
 
       private

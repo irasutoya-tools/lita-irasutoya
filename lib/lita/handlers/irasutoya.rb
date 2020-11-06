@@ -13,8 +13,7 @@ module Lita
       )
 
       def irasutoya(bot)
-        irasuto = ::Irasutoya::Irasuto.random
-        reply(bot, irasuto)
+        reply(bot, ::Irasutoya::Irasuto.random)
       end
 
       private
@@ -31,17 +30,19 @@ module Lita
       end
 
       def reply_to_slack(bot, irasuto)
-        send_attachement(
-          target: bot.room,
-          url: irasuto.url,
-          title: irasuto.title,
-          body: irasuto.description,
-          image_url: irasuto.image_url
-        )
+        irasuto.image_urls.each do |image_url|
+          send_attachement(
+            target: bot.room,
+            url: irasuto.url,
+            title: irasuto.title,
+            body: irasuto.description,
+            image_url: image_url
+          )
+        end
       end
 
       def reply_to_others(bot, irasuto)
-        bot.reply [irasuto.url, irasuto.title, irasuto.description, irasuto.image_url].join("\n")
+        bot.reply [irasuto.url, irasuto.title, irasuto.description, irasuto.image_urls].flatten.join("\n")
       end
 
       def send_attachement(target:, url:, title:, body:, image_url:)

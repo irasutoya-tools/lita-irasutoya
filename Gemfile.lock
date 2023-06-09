@@ -103,7 +103,7 @@ GEM
       method_source (~> 1.0)
     puma (6.3.0)
       nio4r (~> 2.0)
-    racc (1.6.2)
+    racc (1.7.0)
     rack (3.0.7)
     rainbow (3.1.1)
     rake (13.0.6)
